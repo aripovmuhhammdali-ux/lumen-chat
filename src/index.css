@@ -1,0 +1,18 @@
+@import 'highlight.js/styles/github-dark.css';
+@tailwind base; @tailwind components; @tailwind utilities;
+html, body, #root { height: 100%; }
+body { @apply bg-white text-slate-800 antialiased dark:bg-ink-900 dark:text-slate-200; font-family: theme('fontFamily.sans'); }
+.prose :where(code):not(pre code) { @apply rounded-md bg-slate-100 px-1.5 py-0.5 text-[0.85em] font-medium dark:bg-ink-700; }
+.prose :where(code):not(pre code)::before, .prose :where(code):not(pre code)::after { content: none; }
+.prose pre { @apply m-0 bg-transparent p-4; } .prose pre code { @apply bg-transparent p-0 font-mono text-[13px]; }
+.hljs { background: transparent !important; padding: 0 !important; }
+:focus-visible { @apply outline-2 outline-offset-2 outline-brand-500; }
+textarea:focus-visible, input:focus-visible { outline: none; }
+::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { @apply rounded-full bg-slate-300 dark:bg-ink-600; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* Glass mode (toggle in header) */
+html.glass body { background: radial-gradient(640px at 12% 18%, rgba(59,109,240,.28), transparent), radial-gradient(560px at 88% 82%, rgba(110,190,255,.32), transparent), linear-gradient(135deg, #e3ecff, #f3f1ff 50%, #e4f3ff) fixed; }
+html.glass.dark body { background: radial-gradient(640px at 12% 18%, rgba(59,109,240,.32), transparent), radial-gradient(560px at 88% 82%, rgba(40,120,200,.28), transparent), linear-gradient(135deg, #0a1020, #131a33 50%, #0b1a2b) fixed; }
+html.glass .glass-panel { background: rgba(255,255,255,.55) !important; backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%); border-color: rgba(255,255,255,.7) !important; box-shadow: 0 8px 30px rgba(30,60,140,.08); }
+html.glass.dark .glass-panel { background: rgba(25,29,37,.5) !important; border-color: rgba(255,255,255,.1) !important; box-shadow: 0 8px 30px rgba(0,0,0,.3); }
