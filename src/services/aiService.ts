@@ -1,6 +1,6 @@
 import type { Message } from '../types';
 /** Set VITE_API_URL (see .env.example) to your FastAPI server that proxies Qwen via Ollama. */
-export const API_BASE_URL = ((import.meta.env.VITE_API_URL as string | undefined) ?? '').replace(/\/$/, '');
+export const API_BASE_URL = ((import.meta.env.VITE_API_URL as string | undefined) ?? 'https://lumen-chat-api.onrender.com').replace(/\/$/, '');
 export class AIServiceError extends Error {
   constructor(message: string, public code: 'not_connected' | 'network' | 'http') { super(message); }
 }
